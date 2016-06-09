@@ -137,6 +137,16 @@ class LinkedInOAuth2 extends OAuth2 {
 		return json_decode($result,true);
 	}
 
+
+	public function getCompanyFollowers($company_id=""){
+		if(!$company_id)return false;
+		$params['url'] = "https://api.linkedin.com/v1/companies/".$company_id."/num-followers";
+		$params['method']='get';
+		$params['args']['format']='json';
+		$result =  $this->makeRequest($params);
+		return json_decode($result,true);
+	}	
+
 	public function getCompany($company_id=""){
 		if(!$company_id)return false;
 		$fields = array(

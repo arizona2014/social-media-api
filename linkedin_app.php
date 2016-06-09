@@ -2,7 +2,7 @@
 
 #Include necessary class files
 require_once('config.php');
-require_once('LinkedIn.OAuth2.class');
+require_once('LinkedIn.OAuth2.class.php');
 
 /**
  * This is wrapper class file which will call LinkedIn API functions and return result to the controller.
@@ -203,3 +203,7 @@ class LinkedIn
         return $strErrorMessage;
     }
 }
+
+
+$lnk = new LinkedIn;
+$lnk->fnLinkedInConnect();
